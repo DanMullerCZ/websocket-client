@@ -1,0 +1,13 @@
+<div style="width: 10px; height: 10px; border-radius: 15px;" [style.background-color]="wss.readyState === 1 ? 'green' : 'red'"></div>
+
+<button (click)="connectWS()"> CONNECT </button>
+<br>
+<button (click)="disconnect()"> DISCONNECT </button>
+<br>
+<button (click)="sendMessage()"> SEND MESSAGE </button>
+
+<h2>Messages:</h2>
+<p *ngFor="let obj of wss.messages">
+  {{ obj.msg + ' (' + obj.timestamp + ')' }}
+</p>
+
